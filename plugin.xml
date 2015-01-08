@@ -64,51 +64,5 @@
 
     </platform>
 
-    <!-- ios -->
-    <platform name="ios">
-        <config-file target="config.xml" parent="/*">
-            <feature name="FacebookConnectPlugin">
-                <param name="ios-package" value="FacebookConnectPlugin"/>
-                <param name="onload" value="true" />
-            </feature>
-            <plugin name="FacebookConnectPlugin" value="FacebookConnectPlugin"/>
-            <access origin="https://m.facebook.com" />
-            <access origin="https://graph.facebook.com" />
-            <access origin="https://api.facebook.com" />
-            <access origin="https://*.fbcdn.net" />
-            <access origin="https://*.akamaihd.net" />
-        </config-file>
 
-        <header-file src="platforms/ios/HelloCordova/Plugins/com.phonegap.plugins.facebookconnect/FacebookConnectPlugin.h" />
-        <source-file src="platforms/ios/HelloCordova/Plugins/com.phonegap.plugins.facebookconnect/FacebookConnectPlugin.m" />
-
-        <config-file target="*-Info.plist" parent="FacebookAppID">
-            <string>$APP_ID</string>
-        </config-file>
-
-        <config-file target="*-Info.plist" parent="FacebookDisplayName">
-            <string>$APP_NAME</string>
-        </config-file>
-
-        <config-file target="*-Info.plist" parent="CFBundleURLTypes">
-          <array>
-            <dict>
-              <key>CFBundleURLSchemes</key>
-              <array>
-                <string>fb$APP_ID</string>
-              </array>
-            </dict>
-          </array>
-        </config-file>
-
-        <!-- Facebook framework -->
-        <framework src="platforms/ios/FacebookSDK.framework" custom="true" />
-
-        <!-- System frameworks -->
-        <framework src="libsqlite3.dylib" />
-        <framework src="Social.framework" weak="true" />
-        <framework src="Accounts.framework" weak="true" />
-        <framework src="Security.framework" weak="true" />
-
-    </platform>
 </plugin>
